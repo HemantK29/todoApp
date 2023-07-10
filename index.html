@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <header class="head">
+      <div class="nav-bar">
+        <div class="hamburger">
+          <div class="checkBtn">
+            <input type="checkbox" />
+          </div>
+          <div class="lines">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </div>
+        <div class="menu-items">
+          <div class="logo">
+            <h1>Todo App</h1>
+          </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="section1">
+      <div class="container">
+        <h1>Your plan for today?</h1>
+        <input type="text" placeholder="Add Todo" id="userTask" />
+        <button class="btn" id="btn">Add Todo</button>
+        <div class="todo-list">
+          <ul id="task-list">
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
