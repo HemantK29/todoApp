@@ -1,191 +1,169 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+:root{
+    --primary: #001C30;
+    --secondary: #176B87;
+    --lightOne: #64CCC5;
+    --lightTwo: #DAFFFB;
+}
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fefefe;
 }
 
-.head {
-    position: fixed;
-    width: 100vw;
-    height: 5rem;
+.container{
+    height: 100vh;
+    display: flex;
 }
 
-.nav-bar {
-    width: 100%;
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
     height: 100%;
-    background: #011e22;
+    background: var(--primary);
 }
 
-.menu-items {
-    width: 100%;
-    height: 100%;
+.task-list{
+    list-style: none;
+    width: 90%;
+    height: 40rem;
+    background: var(--secondary);
+    padding: 1rem 0.6rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.task-list li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 4rem;
+    padding: 0.5rem;
+    background: var(--lightOne);
+    border-radius: 5px;
+    color: #100f10;
+    margin: 1rem 0;
 }
 
-.logo h1 {
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-family: sans-serif;
-    letter-spacing: 0.3rem;
-    text-align: center;
+.task-list li > p{
+    font-size: 1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
 }
 
-.menu-items ul {
-    list-style: none;
+.btn{
+    padding: 2.5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 2.5px;
+    width: 100%;
+    font: 1rem;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+}
+
+.done{
+    background: #A2FF86;
+}
+
+.remove{
+    background: #ff4444;
+}
+
+.right{
     display: flex;
-}
-
-.menu-items ul li a {
-    text-decoration: none;
-    font-size: 20px;
-    font-family: sans-serif;
-    margin: 0 0 0 4rem;
-    transition: border-bottom 0.2s ease;
-}
-
-a:hover{
-    border-bottom: 3px solid #fefefe;
-}
-
-.hamburger {
-    display: none;
-}
-
-@media (max-width: 770px)
-{
-    .menu-items {
-        padding: 0 2rem;
-    }
-}
-
-@media (max-width: 690px)
-{
-    .logo{
-        margin-top: 1.5rem;
-    }
-    .menu-items{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu-items ul{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        display: none;
-    }
-
-    /* .hamburger {
-        display: block;
-        border: 2px solid red;
-        width: 100%;
-        height: 100%;
-    } */
-}
-
-.section1{
-    width: 100vw;
-    height: 100vh;
-    background: url("https://cdn.pixabay.com/photo/2020/09/28/16/29/leaves-5610361_1280.png");
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:contain;
+    position: relative;
+}
+
+.footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
     display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    font-size: 12px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.userTask{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container{
-    overflow: hidden;
-    margin-top: 5rem;
-    text-align: center;
-    min-width: 550px;
-    max-width: 480px;
-    width: 40rem;
-    height: 35rem;
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-}
-
-input{
-    color: #11010b;
-    font-family: sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    text-align:inherit;
-    margin-top: 1rem;
-    width: 60%;
-    height: 2rem;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-}
-
-.container h1{
-    font-family: sans-serif;
-    margin-top: 1rem;
-    color: #fefefe;
+.userTask h2{
+    font-size: 2.8rem;
+    font-family: 'Nunito Sans', sans-serif;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
-}
-
-.btn{
-    height: 2rem;
-    width: 5rem;
-    border-radius: 5px;
-    outline: none;
-    border-radius: none;
-    cursor: pointer;
     color: white;
-    background: #11010b;
+    padding: 0.5rem;
 }
 
-::-webkit-scrollbar{
-    width: 12px;
-    height: 12px;
+input[type="text"]{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 2rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-family: monospace;
+    border-radius: 5px;
 }
-::-webkit-scrollbar-thumb{
-    background: linear-gradient(45deg, #11010b, lightgreen);
+
+input[type="submit"]{
+    width: 6.5rem;
+    height: 2rem;
+    border: none;
+    outline: none;
     border-radius: 10px;
-}
-
-.todo-list{
-    width: 80%;
-    height: 25rem;
-    margin: 2rem auto;
-}
-
-.todo-list li p{
-    font-size: 15px;
-    font-family: sans-serif;
-    color: #fefefe;
-    font-weight: 600;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    padding: 0.3rem 1rem;
-}
-.todo-list li{
-    list-style-type:decimal-leading-zero;
-    color: #11010b;
-    font-size: 15px;
-    font-weight: 600;
-    margin: 10px 0;
-    text-align: start;
-    position: relative;
-}
-
-.remBtn{
-    width: 20px;
-    color: #fefefe;
-    border-radius: 50%;
-    font-weight: bold;
-    border: 2px solid #fefefe;
-    /* background: transparent; */
-    position: absolute;
-    right: 1rem;
     cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    background: var(--secondary);
+    color: #fefefe;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 1rem;
+}
+
+.content h1{
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    color: #363636;
+}
+
+.content p{
+    font-size: 14px;
+    font-family: monospace;
+}
+
+.footer p:nth-child(2){
+    background: var(--lightOne);
+    padding: 1.5px 10px;
+    border-radius: 20px;
+    margin: 5px 0;
 }
